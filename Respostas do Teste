@@ -1,0 +1,114 @@
+========================================================================================================================================================================================================================================================================
+
+1) Observe o trecho de código abaixo: int INDICE = 13, SOMA = 0, K = 0;
+Enquanto K < INDICE faça { K = K + 1; SOMA = SOMA + K; }
+Imprimir(SOMA);
+Ao final do processamento, qual será o valor da variável SOMA?
+
+  R = Ao final do Processamento o valor da variavel SOMA será 91
+
+  01ª iteração: K = 1, SOMA = 0 + 1 = 1
+  02ª iteração: K = 2, SOMA = 1 + 2 = 3
+  03ª iteração: K = 3, SOMA = 3 + 3 = 6
+  04ª iteração: K = 4, SOMA = 6 + 4 = 10
+  05ª iteração: K = 5, SOMA = 10 + 5 = 15
+  06ª iteração: K = 6, SOMA = 15 + 6 = 21
+  07ª iteração: K = 7, SOMA = 21 + 7 = 28
+  08ª iteração: K = 8, SOMA = 28 + 8 = 36
+  09ª iteração: K = 9, SOMA = 36 + 9 = 45
+  10ª iteração: K = 10, SOMA = 45 + 10 = 55
+  11ª iteração: K = 11, SOMA = 55 + 11 = 66
+  12ª iteração: K = 12, SOMA = 66 + 12 = 78
+  13ª iteração: K = 13, SOMA = 78 + 13 = 91
+
+========================================================================================================================================================================================================================================================================
+
+2) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...),
+escreva um programa na linguagem que desejar onde, 
+informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.
+
+IMPORTANTE: Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;
+
+
+R = 
+
+def is_fibonacci(num):
+    if num == 0 or num == 1:
+        return True
+    
+    a, b = 0, 1
+    c = a + b
+    
+    while c < num:
+        a = b
+        b = c
+        c = a + b
+    
+    return c == num
+
+# Solicita ao usuário para informar um número
+num = int(input("Informe um número: "))
+
+# Verifica se o número pertence à sequência de Fibonacci
+if is_fibonacci(num):
+    print(f"O número {num} pertence à sequência de Fibonacci.")
+else:
+    print(f"O número {num} não pertence à sequência de Fibonacci.")
+
+========================================================================================================================================================================================================================================================================
+
+4) Dado o valor de faturamento mensal de uma distribuidora, detalhado por estado:
+• SP – R$67.836,43
+• RJ – R$36.678,66
+• MG – R$29.229,88
+• ES – R$27.165,48
+• Outros – R$19.849,53
+
+Escreva um programa na linguagem que desejar onde calcule o percentual de representação que cada estado teve dentro do valor total mensal da distribuidora.  
+
+R = 
+
+# Dados de faturamento por estado
+faturamento = {
+    "SP": 67836.43,
+    "RJ": 36678.66,
+    "MG": 29229.88,
+    "ES": 27165.48,
+    "Outros": 19849.53
+}
+
+# Calcula o valor total mensal
+total_faturamento = sum(faturamento.values())
+
+# Calcula e exibe o percentual de representação de cada estado
+print("Percentual de representação por estado:")
+for estado, valor in faturamento.items():
+    percentual = (valor / total_faturamento) * 100
+    print(f"{estado}: {percentual:.2f}%")
+
+========================================================================================================================================================================================================================================================================
+
+
+5) Escreva um programa que inverta os caracteres de um string.
+
+IMPORTANTE:
+a) Essa string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código;
+b) Evite usar funções prontas, como, por exemplo, reverse;
+
+R = 
+
+def inverter_string(s):
+    # Função para inverter a string
+    string_invertida = ""
+    for char in s:
+        string_invertida = char + string_invertida
+    return string_invertida
+
+# Solicita ao usuário para informar a string
+entrada = input("Informe uma string para inverter: ")
+
+# Inverte a string e exibe o resultado
+resultado = inverter_string(entrada)
+print("String invertida:", resultado)
+========================================================================================================================================================================================================================================================================
+
